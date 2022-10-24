@@ -1,0 +1,84 @@
+= Jeu _Rogue-Like_
+
+NOM : _NOM, Prénom, no_étudiant_
+
+L'objet de ce mini-projet est de développer un jeu d'exploration de donjon de type https://fr.wikipedia.org/wiki/Rogue-like[Rogue-like].
+Le thème que vous utiliserez pour ce projet est libre.
+Vous devrez cependant respecter les contraintes fonctionnelles et techniques mentionnées ci-dessous.
+
+[IMPORTANT]
+====
+Vous respecterez les contraintes suivantes:
+
+* Ce mini-projet est à réaliser en Java par groupe de 2 étudiants.
+* Il devra comporter une documentation dans ce fichier.
+* La documentation devra décrire l'usage de l'application (_manuel utilisateur_) ainsi que la conception du jeu (_manuel technique_).
+* Vous utiliserez `git` en effectuant des commits réguliers comportant des messages informatifs.
+* Le _build_ sera assuré par Maven et plus précisément Maven wrapper (déjà intégré dans le projet).
+Aucune manipulation en dehors de Maven ne devra être nécessaire.
+* La version de Java à utiliser est la https://adoptium.net/[version 17].
+* Le _build_ devra intégrer `checkstyle` pour la vérification des règles de codages Google.
+Le projet devra donc les respecter.
+`checkstyle` devra être exécuté automatiquement durant la phase `validate` du cycle de vie par défaut.
+* Des tests unitaires https://junit.org/junit5/docs/current/user-guide/[JUnit 5] (version https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter/5.9.1[_5.9.1_]) devront être disponibles pour la plupart des méthodes développées.
+* Un outil de https://fr.wikipedia.org/wiki/Couverture_de_code[_Code Coverage_] devra être intégré au _build_
+* Les fonctionnalités du langage Java devront être utilisées au mieux (POO, exceptions, librairie de collections, I/O, …).
+* L'application devra pouvoir être exécutée à partir d'un `jar` incluant toutes les dépendances.
+====
+
+== Description du jeu
+* L'univers du jeu est représenté par un ensemble de cases carrées représentant différents éléments (_sol, mur, objet, personnage, …_).
+* L'univers du jeu est généré aléatoirement en début de partie.
+* Le jeu permet de déplacer un personnage joueur (PJ) en mode tour par tour.
+* Le jeu comporte également des personnages non joueur (PNJ).
+* Le PJ possède des caractéristiques (_points de vie, de magie, …_) et un équipement (_pièces de monnaie, armes, …_).
+* Le PJ peut interagir avec son environnement (_ramasser ou utiliser un objet, discuter avec un PNJ, combattre un monstre, …_).
+* Les PNJ obéissent aux mêmes règles que le PJ mais sont contrôlés par le jeu.
+
+== Description de l'application à réaliser
+* L'interface proposera une visualisation de l'univers en mode texte (une case est représentée par un symbole).
+* Les actions du joueur seront saisies au clavier sous la forme `action objet` (par exemple `ramasser clé`).
+* Une interface spécifique pourra être proposée pour des situations particulières (_création du personnage, sélection d'un sort, discussion, …_).
+* L'état de la partie devra pouvoir être sauvegardée et rechargée à tout moment.
+
+== Références
+* Article Wikipedia https://fr.wikipedia.org/wiki/Rogue-like[Rogue-like]
+* Tutoriels :
+http://trystans.blogspot.fr/2016/01/roguelike-tutorial-00-table-of-contents.html[roguelike tutorial],
+https://jellepelgrims.com/posts/roguelike_java[Writing a roguelike in Java]
+* Quelques bibliothèques :
+http://fusesource.github.io/jansi/[JAnsi] (couleur dans un terminal),
+https://github.com/jline/jline3[JLine] (gestion des saisies)
+
+== Manuel utilisateur
+> À compléter :
+> Dans quel univers se déroule le jeu ?
+> Quel est le but du jeu ?
+> Quelles sont les caractéristiques du PJ ?
+> Que peuvent faire les PNJ ?
+> Quelles interactions/commandes sont disponibles ?
+> Quelles évolutions peut-on envisager ?
+
+== Manuel technique
+=== Compiler le projet
+.Sous Linux
+----
+$ ./mvnw package
+----
+
+.Sous Windows
+----
+> mvnw.cmd package
+----
+
+=== Éxécuter l'application
+----
+$ java -jar target/roguelike-1.0.jar
+----
+
+> À compléter :
+> Comment consulter le rapport de couverture de code par les tests ?
+> Quelles bibliothèques ont été utilisées et pourquoi ?
+> Quel est le rôle des différentes classes ?
+> Quels traitements sont réalisés pour gérer une commande saisie par l'utilisateur ? Donnez un exemple.
+> Quelles améliorations peut-on envisager ?
